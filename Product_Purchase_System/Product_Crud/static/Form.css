@@ -1,0 +1,28 @@
+.product_form{
+    border: 2px ridge blueviolet;
+    border-radius: 1rem;
+    margin: 40px 40px;
+    padding: 50px 50px;
+    border-radius: 1rem;
+}
+
+.font-weight-bold{
+    font-weight: bold;
+    color: brown;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 30px;
+}
+
+img{
+    width: 200px;
+    height: 400px;
+    object-fit: cover;
+    image-resolution: from-image;
+}
+
+.login, .signup{
+    border: 2px solid violet;
+    margin: 80px 150px;
+    padding: 60px 40px;
+    border-radius: 1rem;
+}

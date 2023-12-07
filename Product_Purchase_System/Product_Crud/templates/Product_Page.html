@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'Form.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section style="background-color: #eee;">
+    <div class="text-center container py-5">
+        <h4 class="mt-4 mb-5"><strong>Product Page</strong></h4>
+
+        <div class="row">
+            {% for val in all_products %}
+            <div class="col-lg-4 col-md-12 mb-4">
+                <div class="card">
+                    <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                        data-mdb-ripple-color="light">
+                        <img src={{val.product_image.url}} alt="{{val.product_name}}"
+                            class="w-100 img-responsive" />
+                        <a href="#!">
+                            <div class="mask">
+                                <div class="d-flex justify-content-start align-items-end h-100">
+                                    <!-- <h5><span class="badge bg-primary ms-2">New</span></h5> -->
+                                </div>
+                            </div>
+                            <div class="hover-overlay">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <a href="" class="text-reset">
+                            <h5 class="card-title mb-3">{{ val.product_name }}</h5>
+                        </a>
+                        <!-- <a href="" class="text-reset">
+                            <p>Category</p>
+                        </a> -->
+                        <h6 class="mb-3"> &#8377; {{ val.product_price }}</h6>
+                        <a href="{% url 'edit_product' val.id %}"><button class="btn btn-primary"> Update Product </button></a>
+                        <a href="{% url 'delete_product' val.id %}" onclick="return confirm('Are you sure you want to delete this Product?')"><button class="btn btn-primary"> Delete Product </button></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
